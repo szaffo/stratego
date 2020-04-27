@@ -10,13 +10,14 @@
     <div class="stage-container">
       <header>
         <div class="logo"></div>
+        <div class="button-wrapper"><a class="ui button" href="docs/jatekszabaly.pdf">Játékszabály</a></div>
       </header>
       <div class="stage" id="stage-1">
         <div class="login-wrapper ui segment">
           <div class="login-container ui two column very relaxed grid">
             <div class="side left-side column centered">
               <h2 class="ui huge header">Új játék kezdése</h2>
-              <div class="ui animated button primary large" tabindex="0">
+              <div class="ui animated button primary large" tabindex="0" onclick="document.stager.setActive(2)">
                 <div class="visible content">Játék</div>
                 <div class="hidden content"><i class="right arrow icon"></i></div>
               </div>
@@ -38,7 +39,17 @@
         </div>
       </div>
       <div class="stage" id="stage-2">
-        <h2>stage 2</h2>
+        <div class="back-wrapper">
+          <div onclick="document.stager.setActive(1)"><i class="arrow left icon large"></i></div>
+        </div>
+        <div class="ui segment">
+          <h2 class="ui header huge centered">Játékkód</h2>
+          <div class="ui action input">
+            <input class="copyInput" type="text" value="6HP13M" readonly>
+            <button class="copyToken ui right icon button" type="button" name="copyToken" value="copy"><i class="clipboard icon"></i></button>
+          </div>
+          <p>Küld el ezt a kódot a másik játékosnak, hogy be tudjon lépni ebbbe a játékmenetbe!</p>
+        </div>
       </div>
       <div class="stage" id="stage-3">
         <h2>stage 3</h2>
@@ -48,5 +59,7 @@
       </div>
     </div>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.4.1/semantic.min.js"></script>
   <script src="js/main.js"></script>
 </html>

@@ -17,5 +17,41 @@ class StageSelector {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    const stager = new StageSelector();
+    document.stager = new StageSelector();
 })
+
+var popupTimer;
+
+function delayPopup(popup) {
+    popupTimer = setTimeout(function () { $(popup).popup('hide') }, 4200);
+}
+
+$(document).ready(function () {
+    $('.copyToken').click(function () {
+        clearTimeout(popupTimer);
+
+        var $input = $(this).closest('div').find('.copyInput');
+
+        /* Select the text field */
+        $input.select();
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        $(this)
+            .popup({
+                title: 'Sikeres vágólapra másolás!',
+                content: 'Küldd el ezt a kódot a másik játékosnak, hogy ő is be tudjon csatlakozni',
+                on: 'manual',
+                exclusive: true
+            })
+            .popup('show')
+            ;
+
+        // Hide popup after 5 seconds
+        delayPopup(this);
+
+
+    });
+
+});

@@ -9,6 +9,8 @@ html(lang='hu')
         .stage-container
             header
                 .logo
+                .button-wrapper
+                    a.ui.button(href="docs/jatekszabaly.pdf") Játékszabály
 
 
             #stage-1.stage
@@ -18,7 +20,7 @@ html(lang='hu')
                         
                         .side.left-side.column.centered
                             h2.ui.huge.header Új játék kezdése
-                            .ui.animated.button.primary.large(tabindex="0")
+                            .ui.animated.button.primary.large(tabindex="0" onclick="document.stager.setActive(2)")
                                 .visible.content Játék
                                 .hidden.content
                                     i.right.arrow.icon
@@ -35,10 +37,28 @@ html(lang='hu')
                     .ui.vertical.divider Vagy
 
             #stage-2.stage
-                h2 stage 2
+                .back-wrapper
+                    div(onclick="document.stager.setActive(1)")
+                        i.arrow.left.icon.large
+                .ui.segment
+                    h2.ui.header.huge.centered Játékkód
+                    //- h2.ui.header.centered.code 6HP13M
+
+                    .ui.action.input
+                        input(type="text" class="copyInput" value="6HP13M" readonly)
+                        button(type="button" name="copyToken" value="copy" class="copyToken ui right icon button")
+                                i.clipboard.icon
+                   
+                   
+                    p Küld el ezt a kódot a másik játékosnak, hogy be tudjon lépni ebbbe a játékmenetbe!
+
+
+
             #stage-3.stage
                 h2 stage 3
             #stage-4.stage
                 h2 stage 4
 
+    script(src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.4.1/semantic.min.js")
     script(src="js/main.js")

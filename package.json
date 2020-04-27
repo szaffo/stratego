@@ -1,0 +1,27 @@
+{
+  "name": "stratego",
+  "version": "1.0.0",
+  "description": "A multiplayer webgame powered by React and websocet",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szaffo/stratego.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/szaffo/stratego/issues"
+  },
+  "homepage": "https://github.com/szaffo/stratego#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2"
+  }
+}

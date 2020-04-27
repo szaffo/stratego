@@ -10,30 +10,32 @@ html(lang='hu')
             header
                 .logo
                 .button-wrapper
-                    a.ui.button(href="docs/jatekszabaly.pdf") Játékszabály
+                    a.ui.button.secondary(href="docs/jatekszabaly.pdf") Játékszabály
 
 
             #stage-1.stage
                .login-wrapper.ui.segment
                     
-                    .login-container.ui.two.column.very.relaxed.grid
-                        
-                        .side.left-side.column.centered
-                            h2.ui.huge.header Új játék kezdése
-                            .ui.animated.button.primary.large(tabindex="0" onclick="document.stager.setActive(2)")
-                                .visible.content Játék
-                                .hidden.content
-                                    i.right.arrow.icon
+                    .login-container.ui.two.column.very.relaxed.grid.divided
 
-                        .side.right-side.column.centered
-                            h2.ui.huge.header csatlakozás meglévőhöz
-                            .ui.two.row.very.relaxed.grid
-                                .ui.input
-                                    input(type="text" placeholder="Játékkód")
-                                .ui.animated.button.primary(tabindex="0")
-                                    .visible.content Csatlakozás
+                        .two.column.row
+                        
+                            .side.left-side.column.centered
+                                h2.ui.huge.header Új játék kezdése
+                                .ui.animated.button.primary.large(tabindex="0" onclick="document.stager.setActive(2)")
+                                    .visible.content Játék
                                     .hidden.content
                                         i.right.arrow.icon
+
+                            .side.right-side.column.centered
+                                h2.ui.huge.header csatlakozás meglévőhöz
+                                .ui.two.row.very.relaxed.grid
+                                    .ui.input
+                                        input(type="text" placeholder="Játékkód")
+                                    .ui.animated.button.primary(tabindex="0" onclick="document.stager.setActive(3)")
+                                        .visible.content Csatlakozás
+                                        .hidden.content
+                                            i.right.arrow.icon
                     .ui.vertical.divider Vagy
 
             #stage-2.stage
@@ -51,11 +53,23 @@ html(lang='hu')
                    
                    
                     p Küld el ezt a kódot a másik játékosnak, hogy be tudjon lépni ebbbe a játékmenetbe!
+                    p A továbblépéshez be kell lépnie a másik játékosnak is.
 
 
 
             #stage-3.stage
-                h2 stage 3
+                .ui.five.column.grid
+                    //- .five.column.row
+                    .column.four.wide
+                        p col1
+                        p itt meg kell jeleníteni, hogy player_X
+                        p és kell egy ready gomb is
+                    .column.eight.wide
+                        p col2
+                        p Ide kell rakni a játék táblát
+                    .column.four.wide
+                        p col3
+                        p Itt vanna a bábuk
             #stage-4.stage
                 h2 stage 4
 

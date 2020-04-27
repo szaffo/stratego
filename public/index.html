@@ -10,27 +10,29 @@
     <div class="stage-container">
       <header>
         <div class="logo"></div>
-        <div class="button-wrapper"><a class="ui button" href="docs/jatekszabaly.pdf">Játékszabály</a></div>
+        <div class="button-wrapper"><a class="ui button secondary" href="docs/jatekszabaly.pdf">Játékszabály</a></div>
       </header>
       <div class="stage" id="stage-1">
         <div class="login-wrapper ui segment">
-          <div class="login-container ui two column very relaxed grid">
-            <div class="side left-side column centered">
-              <h2 class="ui huge header">Új játék kezdése</h2>
-              <div class="ui animated button primary large" tabindex="0" onclick="document.stager.setActive(2)">
-                <div class="visible content">Játék</div>
-                <div class="hidden content"><i class="right arrow icon"></i></div>
-              </div>
-            </div>
-            <div class="side right-side column centered">
-              <h2 class="ui huge header">csatlakozás meglévőhöz</h2>
-              <div class="ui two row very relaxed grid">
-                <div class="ui input">
-                  <input type="text" placeholder="Játékkód">
-                </div>
-                <div class="ui animated button primary" tabindex="0">
-                  <div class="visible content">Csatlakozás</div>
+          <div class="login-container ui two column very relaxed grid divided">
+            <div class="two column row">
+              <div class="side left-side column centered">
+                <h2 class="ui huge header">Új játék kezdése</h2>
+                <div class="ui animated button primary large" tabindex="0" onclick="document.stager.setActive(2)">
+                  <div class="visible content">Játék</div>
                   <div class="hidden content"><i class="right arrow icon"></i></div>
+                </div>
+              </div>
+              <div class="side right-side column centered">
+                <h2 class="ui huge header">csatlakozás meglévőhöz</h2>
+                <div class="ui two row very relaxed grid">
+                  <div class="ui input">
+                    <input type="text" placeholder="Játékkód">
+                  </div>
+                  <div class="ui animated button primary" tabindex="0" onclick="document.stager.setActive(3)">
+                    <div class="visible content">Csatlakozás</div>
+                    <div class="hidden content"><i class="right arrow icon"></i></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -49,10 +51,25 @@
             <button class="copyToken ui right icon button" type="button" name="copyToken" value="copy"><i class="clipboard icon"></i></button>
           </div>
           <p>Küld el ezt a kódot a másik játékosnak, hogy be tudjon lépni ebbbe a játékmenetbe!</p>
+          <p>A továbblépéshez be kell lépnie a másik játékosnak is.</p>
         </div>
       </div>
       <div class="stage" id="stage-3">
-        <h2>stage 3</h2>
+        <div class="ui five column grid">
+          <div class="column four wide">
+            <p>col1</p>
+            <p>itt meg kell jeleníteni, hogy player_X</p>
+            <p>és kell egy ready gomb is</p>
+          </div>
+          <div class="column eight wide">
+            <p>col2</p>
+            <p>Ide kell rakni a játék táblát</p>
+          </div>
+          <div class="column four wide">
+            <p>col3</p>
+            <p>Itt vanna a bábuk</p>
+          </div>
+        </div>
       </div>
       <div class="stage" id="stage-4">
         <h2>stage 4</h2>

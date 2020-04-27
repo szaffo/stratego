@@ -6,4 +6,39 @@ html(lang='hu')
         link(rel="stylesheet", href="css/main.min.css", attr)
         title Stratego
     body
-        h1 Hello world
+        .stage-container
+            header
+                .logo
+
+
+            #stage-1.stage
+               .login-wrapper.ui.segment
+                    
+                    .login-container.ui.two.column.very.relaxed.grid
+                        
+                        .side.left-side.column.centered
+                            h2.ui.huge.header Új játék kezdése
+                            .ui.animated.button.primary.large(tabindex="0")
+                                .visible.content Játék
+                                .hidden.content
+                                    i.right.arrow.icon
+
+                        .side.right-side.column.centered
+                            h2.ui.huge.header csatlakozás meglévőhöz
+                            .ui.two.row.very.relaxed.grid
+                                .ui.input
+                                    input(type="text" placeholder="Játékkód")
+                                .ui.animated.button.primary(tabindex="0")
+                                    .visible.content Csatlakozás
+                                    .hidden.content
+                                        i.right.arrow.icon
+                    .ui.vertical.divider Vagy
+
+            #stage-2.stage
+                h2 stage 2
+            #stage-3.stage
+                h2 stage 3
+            #stage-4.stage
+                h2 stage 4
+
+    script(src="js/main.js")

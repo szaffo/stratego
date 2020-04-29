@@ -10,7 +10,7 @@
     <div class="stage-container">
       <header>
         <div class="logo"></div>
-        <div class="button-wrapper"><a class="ui button secondary" href="docs/jatekszabaly.pdf">Játékszabály</a></div>
+        <div class="button-wrapper"><a class="ui button secondaryi" href="docs/jatekszabaly.pdf">Játékszabály</a></div>
       </header>
       <div class="stage" id="stage-1">
         <div class="login-wrapper ui segment">
@@ -55,24 +55,231 @@
         </div>
       </div>
       <div class="stage" id="stage-3">
-        <div class="ui five column grid">
+        <div class="ui five column grid stage-3-grid">
           <div class="column four wide">
-            <p>col1</p>
-            <p>itt meg kell jeleníteni, hogy player_X</p>
-            <p>és kell egy ready gomb is</p>
+            <div class="ui comments">
+              <h1 class="ui header medium">Játékosok</h1>
+              <div class="comment"><a class="avatar"><img src="/images/player_1.png"></a>
+                <div class="content"><a class="author">Player 1</a></div>
+              </div>
+              <div class="comment" data-ready="true"><a class="avatar"><img src="/images/player_2.png"></a>
+                <div class="content"><a class="author">Player 2</a></div>
+              </div>
+            </div>
+            <div class="ready-button">
+              <button class="ui button positive huge" type="submit" onclick="$('.ui.modal').modal('show');">Kész</button>
+            </div>
+            <div class="ui basic modal tiny">
+              <div class="ui icon header"><i class="check icon"></i>    Biztos hogy kész vagy?</div>
+              <div class="content">
+                <p></p>Az elfogadás után bármikor elkezdődhet a játék, amint az ellefél is kész. Ezután már nem tudod módosítani a bábuid helyzetét.
+              </div>
+              <div class="actions">
+                <div class="ui red basic cancel inverted button"><i class="remove icon"></i>      Nem</div>
+                <div class="ui green ok inverted button approve"><i class="checkmark icon"></i>      Igen</div>
+              </div>
+            </div>
           </div>
           <div class="column eight wide">
-            <p>col2</p>
-            <p>Ide kell rakni a játék táblát</p>
+            <h1 class="ui header centered">Csatamező elrendezése</h1>
+            <div class="game-board-wrapper">
+              <div class="game-board">
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+              </div>
+            </div>
           </div>
           <div class="column four wide">
-            <p>col3</p>
-            <p>Itt vanna a bábuk</p>
+            <h1 class="ui header centered medium">Felhasználható katonák</h1>
+            <div class="game-board-wrapper stickup">
+              <div class="slots-wrapper">
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p1" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="flag"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p2" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="bomb"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p3" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="bomb"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p4" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="bomb"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p5" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="1"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p6" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="2"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p7" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="3"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p8" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="4"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p9" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="5"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p10" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="6"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p11" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="7"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p12" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="8"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p13" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="9"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p14" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="10"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div class="stage" id="stage-4">
-        <h2>stage 4</h2>
+        <div class="ui five column grid stage-3-grid">
+          <div class="column four wide">
+            <div class="ui comments">
+              <h1 class="ui header medium">Játékosok</h1>
+              <div class="comment"><a class="avatar"><img src="/images/player_1.png"></a>
+                <div class="content"><a class="author">Player 1</a></div>
+              </div>
+              <div class="comment"><a class="avatar"><img src="/images/player_2.png"></a>
+                <div class="content"><a class="author">Player 2</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="column eight wide">
+            <h1 class="ui header centered">Elenség köre</h1>
+            <div class="game-board-wrapper">
+              <div class="game-board">
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+              </div>
+            </div>
+          </div>
+          <div class="column four wide">
+            <h1 class="ui header centered medium">Elesett katonák</h1>
+            <div class="game-board-wrapper stickup">
+              <div class="slots-wrapper">
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p1" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="flag"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p2" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="bomb"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p3" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="bomb"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p4" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="bomb"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p5" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="1"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p6" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="2"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p7" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="3"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p8" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="4"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p9" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="5"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p10" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="6"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p11" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="7"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p12" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="8"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p13" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="9"></div>
+                </div>
+                <div class="board-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <div class="piece" id="p14" ondragstart="drag(event)" draggable="true" data-color="blue" data-piece="10"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

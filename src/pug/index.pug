@@ -10,7 +10,7 @@ html(lang='hu')
             header
                 .logo
                 .button-wrapper
-                    a.ui.button.secondary(href="docs/jatekszabaly.pdf") Játékszabály
+                    a.ui.button.secondaryi(href="docs/jatekszabaly.pdf") Játékszabály
 
 
             #stage-1.stage
@@ -58,20 +58,200 @@ html(lang='hu')
 
 
             #stage-3.stage
-                .ui.five.column.grid
-                    //- .five.column.row
+                .ui.five.column.grid.stage-3-grid
                     .column.four.wide
-                        p col1
-                        p itt meg kell jeleníteni, hogy player_X
-                        p és kell egy ready gomb is
+                        .ui.comments
+                            h1.ui.header.medium Játékosok
+                            .comment
+                                a.avatar
+                                    img(src="/images/player_1.png")
+                                .content
+                                    a.author Player 1
+                                   
+                            .comment(data-ready="true")
+                                a.avatar
+                                    img(src="/images/player_2.png")
+                                .content
+                                    a.author Player 2
+
+                        .ready-button
+                            button.ui.button.positive.huge(type='submit' onclick="$('.ui.modal').modal('show');") Kész
+
+
+                        .ui.basic.modal.tiny
+                            .ui.icon.header
+                                i.check.icon
+                                |     Biztos hogy kész vagy?
+                            .content
+                                p
+                                | Az elfogadás után bármikor elkezdődhet a játék, amint az ellefél is kész. Ezután már nem tudod módosítani a bábuid helyzetét.
+                            .actions
+                                .ui.red.basic.cancel.inverted.button
+                                    i.remove.icon
+                                    |       Nem
+                                .ui.green.ok.inverted.button.approve
+                                    i.checkmark.icon
+                                    |       Igen
+
+
+
                     .column.eight.wide
-                        p col2
-                        p Ide kell rakni a játék táblát
+                        
+                        h1.ui.header.centered Csatamező elrendezése
+                        .game-board-wrapper
+                            .game-board
+                                - var n = 36
+                                while n > 0 
+                                    - n--
+                                    .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+
+
+
                     .column.four.wide
-                        p col3
-                        p Itt vanna a bábuk
+                        h1.ui.header.centered.medium Felhasználható katonák
+                        .game-board-wrapper.stickup
+                            .slots-wrapper
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p1.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='flag')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p2.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='bomb')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p3.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='bomb')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p4.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='bomb')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p5.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='1')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p6.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='2')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p7.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='3')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p8.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='4')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p9.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='5')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p10.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='6')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p11.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='7')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p12.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='8')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p13.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='9')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p14.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='10')
+                                
+            
             #stage-4.stage
-                h2 stage 4
+                .ui.five.column.grid.stage-3-grid
+                    .column.four.wide
+                        .ui.comments
+                            h1.ui.header.medium Játékosok
+                            .comment
+                                a.avatar
+                                    img(src="/images/player_1.png")
+                                .content
+                                    a.author Player 1
+                                   
+                            .comment
+                                a.avatar
+                                    img(src="/images/player_2.png")
+                                .content
+                                    a.author Player 2
+
+                        //- .ready-button
+                            button.ui.button.positive.huge(type='submit' onclick="$('.ui.modal').modal('show');") Kész
+
+
+                        //- .ui.basic.modal.tiny
+                        //-     .ui.icon.header
+                        //-         i.check.icon
+                        //-         |     Biztos hogy kész vagy?
+                        //-     .content
+                        //-         p
+                        //-         | Az elfogadás után bármikor elkezdődhet a játék, amint az ellefél is kész. Ezután már nem tudod módosítani a bábuid helyzetét.
+                        //-     .actions
+                        //-         .ui.red.basic.cancel.inverted.button
+                        //-             i.remove.icon
+                        //-             |       Nem
+                        //-         .ui.green.ok.inverted.button.approve
+                        //-             i.checkmark.icon
+                        //-             |       Igen
+
+
+
+                    .column.eight.wide
+                        
+                        h1.ui.header.centered Elenség köre
+                        .game-board-wrapper
+                            .game-board
+                                - var n = 36
+                                while n > 0 
+                                    - n--
+                                    .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+
+
+
+                    .column.four.wide
+                        h1.ui.header.centered.medium Elesett katonák
+                        .game-board-wrapper.stickup
+                            .slots-wrapper
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p1.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='flag')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p2.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='bomb')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p3.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='bomb')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p4.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='bomb')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p5.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='1')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p6.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='2')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p7.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='3')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p8.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='4')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p9.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='5')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p10.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='6')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p11.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='7')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p12.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='8')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p13.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='9')
+                                
+                                .board-slot(ondrop="drop(event)" ondragover="allowDrop(event)")
+                                    #p14.piece(ondragstart="drag(event)" draggable="true" data-color="blue" data-piece='10')
+ 
 
     script(src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js")
     script(src="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.4.1/semantic.min.js")

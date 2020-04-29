@@ -55,3 +55,28 @@ $(document).ready(function () {
     });
 
 });
+
+
+$('.ui.modal').modal({
+    onApprove: function (element) {
+        document.stager.setActive(4);
+        console.log("approve");
+
+        return true;
+    },
+});
+
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}

@@ -1,3 +1,5 @@
+@import board
+    
 body
     header
         padding: 0px 100px
@@ -92,3 +94,40 @@ body
 
         .action.input
             margin-bottom: 20px
+
+#stage-4,
+#stage-3
+    .stage-3-grid
+        padding-top: 20px
+
+    h1,h2,h3,p 
+        text-align: center
+
+    .comments
+        padding: 0 20px
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        .comment
+            width: 80%
+            // background-color: #69696946
+            box-shadow: 0px 0px 2px #999
+            border-radius: 3px
+            transition: box-shadow 100ms linear
+
+            .avatar img
+                height: 50px
+                width: 50px
+                margin-right: 30px
+
+            &[data-ready="true"]
+                box-shadow: 0px 0px 2px #999, 0px 0px 2px 2px #5cfc00fd inset
+
+
+    .ready-button
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        width: 100%
